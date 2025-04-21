@@ -17,7 +17,6 @@ az==0.1.0.dev1
 beautifulsoup4==4.12.2
 black==25.1.0
 cachetools==5.3.1
-cchardet==2.1.7
 certifi==2023.5.7
 cffi==1.15.1
 charset-normalizer==3.1.0
