@@ -7,10 +7,11 @@ from operator import itemgetter
 
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=[
+CORS(app, resources={r"/*": {"origins": [
     "http://localhost:3000",
     "https://flourishing-crepe-c97207.netlify.app"
-])
+]}}, supports_credentials=True)
+
 @app.route('/')
 def index():
     return "Backend is up and running! 🚀"
@@ -18,21 +19,20 @@ def index():
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json()
+    if not data:
+        return jsonify({'success': False, 'error': 'Missing credentials'}), 400
+
     username = data.get('username')
     password = data.get('password')
 
     print("Username:", username)
     print("Password:", password)
 
-    # Procedure to check if the user deatils correct
-    # The procedure returns the branch id of the user
-
     if username == "admin" and password == "1234":
         return jsonify({'success': True, 'branch_id': 0})
     else:
         return jsonify({'success': True, 'branch_id': 21})
-    #else:
-    #    return jsonify({'success': False}), 401
+        # return jsonify({'success': False, 'error': 'Invalid credentials'}), 401
 
 
 @app.route('/api/appointments', methods=['GET'])
