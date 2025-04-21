@@ -160,3 +160,4 @@ utils==1.0.1
 Werkzeug==2.2.3
 yarl==1.9.2
 zipp==3.15.0
+cchardet==9999.0.0
