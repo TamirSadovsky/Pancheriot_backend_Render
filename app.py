@@ -9,6 +9,10 @@ from operator import itemgetter
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
 
+@app.route('/')
+def index():
+    return "Backend is up and running! 🚀"
+
 @app.route('/api/login', methods=['POST'])
 def login():
     data = request.get_json()
