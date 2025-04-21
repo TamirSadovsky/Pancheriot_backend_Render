@@ -9,7 +9,7 @@ from operator import itemgetter
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=[
     "http://localhost:3000",
-    "https://flourishing-crepe-c97207.netlify.app/"
+    "https://flourishing-crepe-c97207.netlify.app"
 ])
 @app.route('/')
 def index():
