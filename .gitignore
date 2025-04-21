@@ -1,0 +1,6 @@
+venv/
+gcloud_key.json
+__pycache__/
+users_fetch.py
+.azure
+backend.zip
