@@ -14,7 +14,7 @@ CORS(app, resources={r"/*": {"origins": [
 
 @app.route('/')
 def index():
-    return "Backend is up and running! 🚀"
+    return "Backend is up and running!"
 
 @app.route('/api/login', methods=['POST'])
 def login():
@@ -103,6 +103,7 @@ def update_signature_sent():
     else:
         return jsonify({"success": False, "error": result["error"]}), 500
 
-
+""""
 if __name__ == '__main__':
     app.run(debug=True)
+"""""
